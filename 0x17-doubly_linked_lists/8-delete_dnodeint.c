@@ -38,7 +38,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	pos = len = 0;
 	current = *head;
 	len = dll_len(current);
-	if (index > len - 1)
+	if (current == NULL || index > len - 1)
 		return (-1);
 	if (len == 1)
 	{
@@ -46,9 +46,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		*head = NULL;
 		return (1);
 	}
-
-	if (current == NULL)
-		return (-1);
 	if (index == 0)
 	{
 		p = current;
