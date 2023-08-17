@@ -38,6 +38,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	pos = len = 0;
 	current = *head;
 	len = dll_len(current);
+	if (index > len - 1)
+		return (-1);
 	if (len == 1)
 	{
 		free(current);
@@ -67,7 +69,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		p->next = current->next;
 		inter = current;
 		current = current->next;
-		current->prev = p;
+		if (current != NULL)
+			current->prev = p;
 		free(inter);
 	}
 	return (1);
