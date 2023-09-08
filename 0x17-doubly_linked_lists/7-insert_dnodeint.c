@@ -38,11 +38,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	pos = len = 0;
 	current = *h;
 	len = dll_len(current);
-	if (idx > len && current != NULL)
+	if (idx > len)
 		return (NULL);
 	if (idx == len)
 		new = add_dnodeint_end(h, n);
-	else if (idx == 0 || current == NULL)
+	else if (idx == 0 && current == NULL || idx == 0)
 	{
 		new = add_dnodeint(h, n);
 	}
