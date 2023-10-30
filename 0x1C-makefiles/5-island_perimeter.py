@@ -18,10 +18,10 @@ def island_perimeter(grid):
 
     # Grid is completely surrounded by water (0s)
     # check first and last row (lists) in grid
-    if 1 in grid[0] or 1 in grid[len(grid)-1]:
-        return
+    # if 1 in grid[0] or 1 in grid[len(grid)-1]:
+    #    return
 
-    for row in grid[1:]:
+    for row in grid:
 
         # grid max width is 100
         if len(row) > 100:
@@ -29,8 +29,8 @@ def island_perimeter(grid):
 
         # Grid is completely surrounded by water (0s)
         # check first and last items in the row
-        if row[0] == 1 or row[len(row) - 1] == 1:
-            return
+        # if row[0] == 1 or row[len(row) - 1] == 1:
+        #     return
 
         # there must be only one island
         # if one was found (perimeter is not 0) and last iteration
