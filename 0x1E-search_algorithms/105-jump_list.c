@@ -28,7 +28,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 		num_pos = current_node->n;
 		if (num_pos < value)
 		{
-			printf("Value checked array[%d] = [%d]\n", pos, num_pos);
+			printf("Value checked at index [%d] = [%d]\n", pos, num_pos);
 			pos = pos + jump_size;
 			if (pos > (int)size - jump_size)
 			{
@@ -54,7 +54,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 		}
 		else if (num_pos >= value)
 		{
-			printf("Value checked array[%d] = [%d]\n", pos, num_pos);
+			printf("Value checked at index [%d] = [%d]\n", pos, num_pos);
 			printf("Value found between indexes [%d] and [%d]\n", pos - jump_size, pos);
 			pos = pos - jump_size;
 			current_node = list;
